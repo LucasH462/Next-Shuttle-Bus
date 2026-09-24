@@ -12,7 +12,7 @@
     <link rel="icon" href="fav.png" type="image/png"> <!-- PNG -->
     <link rel="apple-touch-icon" href="fav.png">
     <meta name="theme-color" content="#8ec5fc">
-    <link rel="canonical" href="https://jack6228.github.io/Next-Shuttle-Bus/">
+    <link rel="canonical" href="https://lucash462.github.io/Next-Shuttle-Bus/">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -476,22 +476,6 @@
         <div class="time-display" id="timeDisplayUnderUnder"></div>
     </div>
 
-    <div id="popup"
-        style="display:none; position:fixed; left:50%; bottom:32px; transform:translateX(-50%); box-shadow:0 4px 6px rgba(0,0,0,0.1); border-radius:16px; padding:24px 32px; z-index:9999; max-width:90vw; width:fit-content;">
-        <button id="close-popup"
-            style="position:absolute; top:8px; right:8px; background:none; border:none; font-size:1.5em; font-weight:bold; color:var(--popup-text); cursor:pointer; border-radius:50%; width:32px; height:32px; line-height:32px; text-align:center;">&times;</button>
-        <div id="popup-content" style="display:flex; align-items:center; gap:24px;">
-            <img id="popup-logo" src="img.png" alt="Company Logo"
-                style="max-width:120px; height:auto; margin-right:16px; border-radius:0px;">
-            <div id="popup-text-container" style="font-size:1.1em;">
-                Undergrad or Master's STEM Student? See this
-                opportunity to <a href="https://journals.ed.ac.uk/esjs"
-                    style="font-weight:600; color:var(--accent-color); text-decoration:underline;">publish your
-                    research</a>!
-            </div>
-        </div>
-    </div>
-
     <div class="footer">
         <a class="link" href="https://transport.ed.ac.uk/public-transport/shuttle-bus" target="_blank">Full
             Timetable</a>
@@ -501,33 +485,13 @@
         Copyright &copy; <span id="currentYear"></span>
         <a class="link-hidden" href="https://www.linkedin.com/in/jack-l-smith/" target="_blank">Jack L Smith</a>
         <br>
-        Endorsed by the University of Edinburgh
+        Probably not endorsed by the University of Edinburgh
         <!--Feedback &amp; bugs: <a style="color: #664;" href="www.google.com">www.google.com</a> -->
         <br><br>
-        <a href="https://visitorbadge.io/status?path=https://jack6228.github.io/Next-Shuttle-Bus"><img
-                id="visitor-badge"
-                src="https://api.visitorbadge.io/api/daily?path=https%3A%2F%2Fjack6228.github.io%2FNext-Shuttle-Bus%2Fv&label=VisitorCount&labelColor=%23add8e6&countColor=%2300  56b3&labelStyle=lower" /></a>
     </div>
     <script>
         // --- THEME TOGGLE SCRIPT ---
         const themeToggleBtn = document.getElementById('theme-toggle');
-        const visitorBadge = document.getElementById('visitor-badge');
-
-        const lightBadgeSrc = "https://api.visitorbadge.io/api/daily?path=https%3A%2F%2Fjack6228.github.io%2FNext-Shuttle-Bus%2Fv&label=VisitorCount&labelColor=%23add8e6&countColor=%230056b3&labelStyle=lower";
-        const darkBadgeSrc = "https://api.visitorbadge.io/api/daily?path=https%3A%2F%2Fjack6228.github.io%2FNext-Shuttle-Bus%2Fv&label=VisitorCount&labelColor=%23374151&countColor=%239ca3af&labelStyle=lower";
-
-        const updateVisitorBadge = (theme) => {
-            if (theme === 'dark') {
-                visitorBadge.src = darkBadgeSrc;
-            } else {
-                visitorBadge.src = lightBadgeSrc;
-            }
-        };
-
-        // Set initial badge based on theme
-        if (document.documentElement.classList.contains('dark')) {
-            updateVisitorBadge('dark');
-        }
 
         themeToggleBtn.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
@@ -537,7 +501,6 @@
                 theme = 'dark';
             }
             localStorage.setItem('theme', theme);
-            updateVisitorBadge(theme);
         });
 
 
@@ -698,18 +661,6 @@
         }
         updateTimeDisplay();
         setInterval(updateTimeDisplay, 1000);
-
-        // --- POP-UP FUNCTIONALITY (custom CSS only) ---
-        (function () {
-            var popup = document.getElementById('popup');
-            var closeButton = document.getElementById('close-popup');
-            setTimeout(function () {
-                popup.style.display = 'block';
-            }, 7000);
-            closeButton.onclick = function () {
-                popup.style.display = 'none';
-            };
-        })();
     </script>
 </body>
 
